@@ -41,7 +41,8 @@ GAPPS_FORCE_DIALER_OVERRIDES := true
 PRODUCT_PACKAGES += \
      GoogleCamera \
      GooglePinyinIME \
-     LatinImeGoogle
+     LatinImeGoogle \
+     GoogleContacts 
 
 GAPPS_EXCLUDED_PACKAGES += \
      YouTube \
