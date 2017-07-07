@@ -40,7 +40,6 @@ GAPPS_FORCE_DIALER_OVERRIDES := true
 
 PRODUCT_PACKAGES += \
      GoogleCamera \
-     GooglePinyinIME \
      LatinImeGoogle \
      GoogleContacts 
 
@@ -49,7 +48,9 @@ GAPPS_EXCLUDED_PACKAGES += \
      Maps \
      PrebuiltGmail \
      PlusOne \
-     Hangouts
+     Hangouts \
+     CalculatorGoogle \
+     CalendarGooglePrebuilt
 
 # Google Assistant
 PRODUCT_PROPERTY_OVERRIDES += \
