@@ -53,8 +53,6 @@ GAPPS_VARIANT := mini
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_FORCE_BROWSER_OVERRIDES := true
-GAPPS_FORCE_DIALER_OVERRIDES := true
-GAPPS_FORCE_MMS_OVERRIDES := true
 
 # Google Assistant
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -68,12 +66,12 @@ PRODUCT_PACKAGES += \
     GoogleCamera
 
 GAPPS_EXCLUDED_PACKAGES += \
-     YouTube \
-     Maps \
-     PrebuiltGmail \
-     PlusOne \
-     Hangouts \
-     CalculatorGoogle \
-     CalendarGooglePrebuilt
+    YouTube \
+    Maps \
+    PrebuiltGmail \
+    PlusOne \
+    Hangouts \
+    CalculatorGoogle \
+    CalendarGooglePrebuilt
 
 $(call inherit-product, vendor/google/build/opengapps-packages.mk)
