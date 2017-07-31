@@ -42,7 +42,10 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Tethys.ogg \
     ro.config.alarm_alert=Oxygen.ogg \
-    ro.config.ringtone=Atria.ogg
+
+# Audio (Ringtones)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.ringtone=Titania.ogg
 
 # bootanimation
 PRODUCT_COPY_FILES +=  \
@@ -61,7 +64,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Add some extras not in micro
 # To override stock AOSP apps
 PRODUCT_PACKAGES += \
-    GoogleContacts \
     LatinImeGoogle \
     GoogleCamera
 
