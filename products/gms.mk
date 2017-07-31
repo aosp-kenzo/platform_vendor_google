@@ -38,15 +38,6 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGE_OVERLAYS += \
     $(VENDOR_SONYAOSP_PATH)/overlay-night/common
 
-# Audio (Notifications/Alarms)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.notification_sound=Tethys.ogg \
-    ro.config.alarm_alert=Oxygen.ogg \
-
-# Audio (Ringtones)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Titania.ogg
-
 # bootanimation
 PRODUCT_COPY_FILES +=  \
     vendor/google/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
