@@ -65,6 +65,7 @@ GAPPS_EXCLUDED_PACKAGES += \
     PlusOne \
     Hangouts \
     CalculatorGoogle \
-    CalendarGooglePrebuilt
+    CalendarGooglePrebuilt \
+    PrebuiltDeskClockGoogle
 
 $(call inherit-product, vendor/google/build/opengapps-packages.mk)
