@@ -42,6 +42,11 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES +=  \
     vendor/google/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
+
+ifeq ($(WITH_GAPPS),true)
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
+endif
+
 # OpenGapps
 GAPPS_VARIANT := mini
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
@@ -67,5 +72,3 @@ GAPPS_EXCLUDED_PACKAGES += \
     CalculatorGoogle \
     CalendarGooglePrebuilt \
     PrebuiltDeskClockGoogle
-
-$(call inherit-product, vendor/google/build/opengapps-packages.mk)
