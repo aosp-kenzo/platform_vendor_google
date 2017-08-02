@@ -71,6 +71,9 @@ endif
 ifeq ($(WITH_PIXEL),true)
 GAPPS_FORCE_DIALER_OVERRIDES := true
 GAPPS_FORCE_MMS_OVERRIDES := true
+GAPPS_FORCE_PIXEL_LAUNCHER := true
+PRODUCT_PACKAGES += \
+    GoogleContacts 
 endif
 
 # Google Assistant
