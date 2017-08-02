@@ -42,12 +42,15 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES +=  \
     vendor/google/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
-
+# OpenGapps
 ifeq ($(WITH_GAPPS),true)
 $(call inherit-product, vendor/google/build/opengapps-packages.mk)
 endif
-
-# OpenGapps
+# Telephony Packages
+ifeq ($(WITH_PIXEL),true)
+GAPPS_FORCE_DIALER_OVERRIDES := true
+GAPPS_FORCE_MMS_OVERRIDES := true
+endif
 GAPPS_VARIANT := mini
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
