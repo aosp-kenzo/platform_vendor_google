@@ -44,21 +44,10 @@ PRODUCT_COPY_FILES +=  \
 
 # OpenGapps
 ifeq ($(WITH_GAPPS),true)
-$(call inherit-product, vendor/google/build/opengapps-packages.mk)
-endif
-# Telephony Packages
-ifeq ($(WITH_PIXEL),true)
-GAPPS_FORCE_DIALER_OVERRIDES := true
-GAPPS_FORCE_MMS_OVERRIDES := true
-endif
 GAPPS_VARIANT := mini
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_FORCE_BROWSER_OVERRIDES := true
-
-# Google Assistant
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opa.eligible_device=true
 
 # Add some extras not in micro
 # To override stock AOSP apps
@@ -75,3 +64,15 @@ GAPPS_EXCLUDED_PACKAGES += \
     CalculatorGoogle \
     CalendarGooglePrebuilt \
     PrebuiltDeskClockGoogle
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
+endif
+
+# Telephony Packages
+ifeq ($(WITH_PIXEL),true)
+GAPPS_FORCE_DIALER_OVERRIDES := true
+GAPPS_FORCE_MMS_OVERRIDES := true
+endif
+
+# Google Assistant
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opa.eligible_device=true
