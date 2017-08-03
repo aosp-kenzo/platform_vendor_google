@@ -43,7 +43,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
     ro.setupwizard.rotation_locked=
 
-GAPPS_VARIANT := mini
+GAPPS_VARIANT := micro
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_FORCE_BROWSER_OVERRIDES := true
@@ -52,17 +52,12 @@ GAPPS_FORCE_BROWSER_OVERRIDES := true
 # To override stock AOSP apps
 PRODUCT_PACKAGES += \
     LatinImeGoogle \
-    GoogleCamera
+    GoogleCamera \
+    Photos
 
 GAPPS_EXCLUDED_PACKAGES += \
-    YouTube \
-    Maps \
     PrebuiltGmail \
-    PlusOne \
-    Hangouts \
-    CalculatorGoogle \
-    CalendarGooglePrebuilt \
-    PrebuiltDeskClockGoogle \
+    PrebuiltExchange3Google \
     LatinIME \
     PackageInstaller \
     Camera2 \
@@ -82,10 +77,12 @@ GAPPS_FORCE_MMS_OVERRIDES := true
 GAPPS_FORCE_PIXEL_LAUNCHER := true
 
 PRODUCT_PACKAGES += \
-    GoogleContacts 
+    GoogleContacts\
+    PrebuiltDeskClockGoogle
 
 GAPPS_EXCLUDED_PACKAGES += \
     Dialer \
     Contacts \
-    Messaging
+    Messaging \
+    DeskClock
 endif
