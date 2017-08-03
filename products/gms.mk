@@ -30,6 +30,10 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES +=  \
     vendor/google/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
+# Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.maintainer=$(shell users)
+
 # OpenGapps
 ifeq ($(WITH_GAPPS),true)
 # Google property overides
@@ -42,7 +46,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enterprise_mode=0 \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
     ro.setupwizard.rotation_locked=true \
-    ro.setupwizard.mode=DISABLED
+    ro.setupwizard.mode=DISABLED \
+    ro.com.google.ime.theme_id=5
 
 GAPPS_VARIANT := micro
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
@@ -63,7 +68,7 @@ GAPPS_EXCLUDED_PACKAGES += \
     PackageInstaller \
     Camera2 \
     Launcher3 \
-    Gally2 \
+    Gallery2 \
     Jelly \
     CalendarGooglePrebuilt
 
