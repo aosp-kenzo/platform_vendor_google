@@ -39,9 +39,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-google \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.error.receiver.system.apps=com.google.android.gms \
-    ro.setupwizard.enterprise_mode=1 \
+    ro.setupwizard.enterprise_mode=0 \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
-    ro.setupwizard.rotation_locked=
+    ro.setupwizard.rotation_locked=true \
+    ro.setupwizard.mode=DISABLED
 
 GAPPS_VARIANT := micro
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
@@ -61,7 +62,8 @@ GAPPS_EXCLUDED_PACKAGES += \
     LatinIME \
     PackageInstaller \
     Camera2 \
-    Launcher3
+    Launcher3 \
+    CalendarGooglePrebuilt
 
 # Google Assistant
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -77,12 +79,11 @@ GAPPS_FORCE_MMS_OVERRIDES := true
 GAPPS_FORCE_PIXEL_LAUNCHER := true
 
 PRODUCT_PACKAGES += \
-    GoogleContacts\
+    GoogleContacts \
     PrebuiltDeskClockGoogle
 
 GAPPS_EXCLUDED_PACKAGES += \
     Dialer \
     Contacts \
-    Messaging \
-    DeskClock
+    Messaging
 endif
