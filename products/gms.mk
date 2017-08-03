@@ -63,7 +63,7 @@ GAPPS_EXCLUDED_PACKAGES += \
     PackageInstaller \
     Camera2 \
     Launcher3 \
-    Snap \
+    Gally2 \
     Jelly \
     CalendarGooglePrebuilt
 
