@@ -92,5 +92,5 @@ PRODUCT_PACKAGES += \
 GAPPS_EXCLUDED_PACKAGES += \
     Dialer \
     Contacts \
-    Messaging
+    Mms
 endif
