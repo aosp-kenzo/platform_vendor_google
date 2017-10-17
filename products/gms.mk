@@ -31,6 +31,17 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.maintainer=$(shell users)
 
+# libfuse
+PRODUCT_PACKAGES += \
+    libfuse
+
+# exfat
+PRODUCT_PACKAGES += \
+    fsck.exfat \
+    libexfat \
+    mkfs.exfat \
+    mount.exfat
+
 # OpenGapps
 ifeq ($(WITH_GAPPS),true)
 # Google property overides
@@ -40,54 +51,29 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-google \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.error.receiver.system.apps=com.google.android.gms \
-    ro.setupwizard.enterprise_mode=0 \
+    ro.setupwizard.enterprise_mode=1 \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
     ro.setupwizard.rotation_locked=true \
-    ro.setupwizard.mode=DISABLED \
     ro.com.google.ime.theme_id=5
 
 GAPPS_VARIANT := micro
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_FORCE_BROWSER_OVERRIDES := true
+GAPPS_FORCE_DIALER_OVERRIDES := true
+GAPPS_FORCE_MMS_OVERRIDES := true
+GAPPS_FORCE_PIXEL_LAUNCHER := true
 
-# Add some extras not in micro
-# To override stock AOSP apps
 PRODUCT_PACKAGES += \
     LatinImeGoogle \
     GoogleCamera \
-    Photos
-
-GAPPS_EXCLUDED_PACKAGES += \
-    PrebuiltGmail \
-    PrebuiltExchange3Google \
-    LatinIME \
-    PackageInstaller \
-    Camera2 \
-    Launcher3 \
-    Gallery2 \
-    Browser \
-    CalendarGooglePrebuilt
+    Photos \
+    GoogleContacts \
+    PrebuiltDeskClockGoogle
 
 # Google Assistant
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
 
 $(call inherit-product, vendor/google/build/opengapps-packages.mk)
-endif
-
-ifeq ($(WITH_PIXEL),true)
-# Telephony Packages
-GAPPS_FORCE_DIALER_OVERRIDES := true
-GAPPS_FORCE_MMS_OVERRIDES := true
-GAPPS_FORCE_PIXEL_LAUNCHER := true
-
-PRODUCT_PACKAGES += \
-    GoogleContacts \
-    PrebuiltDeskClockGoogle
-
-GAPPS_EXCLUDED_PACKAGES += \
-    Dialer \
-    Contacts \
-    Mms
 endif
